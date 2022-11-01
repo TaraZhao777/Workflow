@@ -1,0 +1,15 @@
+name: My First Workflow
+
+on: [ push ]
+
+#Jobs in the workflow
+jobs:
+  my-first-workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo the date
+      run: echo "The current time and date in GitHub is $(date)"
+    - name: echo informationabout the context
+      run: echo "head_ref - ${{github.head_ref}},owner - ${{github.repository_owner}}"
+    - name: Checkout source
+      uses: actions/checkout@v2
